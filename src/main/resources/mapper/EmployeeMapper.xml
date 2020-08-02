@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bimgenuis.dao.EmployeeMapper">
+
+
+    <select id="queryEmployee"  parameterType="String" resultMap="BaseResultMap">
+        select * from employee;
+    </select>
+
+    <update id="updateEmployee" parameterType="Employee" useGeneratedKeys="true"  >
+        update
+             employee
+        set
+             id=#{id},name=#{name},email=#{email},phone=#{phone},wechat=#{wechat},qq=#{qq},position=#{zhiwu},position_name=#{zhicheng},sculpture=#{sculpture},professionalDirection=#{professionalDirection},isPublic=#{isPublic}
+        where
+             id=#{id};
+    </update>
+
+
+
+    <resultMap id="BaseResultMap" type="com.bimgenuis.pojo.Employee">
+        <id column="id" property="id" jdbcType="Integer"/>
+        <id column="name" property="name" jdbcType="String"/>
+        <id column="login" property="login" jdbcType="String"/>
+        <id column="login_id" property="login_id" jdbcType="Integer"/>
+        <id column="login_name" property="login_name" jdbcType="String"/>
+        <id column="email" property="email" jdbcType="String"/>
+        <id column="phone" property="phone" jdbcType="String"/>
+        <id column="wechat" property="wechat" jdbcType="String"/>
+        <id column="qq" property="qq" jdbcType="String"/>
+        <id column="position" property="position" jdbcType="String"/>
+        <id column="position_name" property="position_name" jdbcType="String"/>
+        <id column="sculpture" property="sculpture" jdbcType="String"/>
+        <id column="professionalDirection" property="professionalDirection" jdbcType="String"/>
+        <id column="isPublic" property="isPublic" jdbcType="Boolean"/>
+
+    </resultMap>
+
+</mapper>

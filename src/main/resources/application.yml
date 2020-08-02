@@ -1,0 +1,24 @@
+server:
+  port: 8880
+  servlet:
+    context-path: /bimgenius
+
+
+spring:
+  application:
+    name: employee_management
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://212.64.68.191:3506/rbac?characterEncoding=utf-8&serverTimezone=GMT"
+    username: root
+    password: PQHkrg4jfw~!@
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.bimgenuis.pojo
+
+
+#logging:
+#  config: classpath:logback-spring.xml
